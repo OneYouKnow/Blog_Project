@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<th:block th:fragment="scripts">
+		<script th:src="@{/js/ckeditor/ckeditor.js}"></script>
+		<script defer th:src="@{/js/board.js}"></script>
+	</th:block>
+
+	<th:block th:fragment="form">
+		<div class="errors" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></div>
+		<dl>
+			<dt>작성자</dt>
+			<dd>
+				<input type="text" name="poster" th:field="*{poster}">
+				<div class="errors" th:each="err:${#fields.errors('poster')}" th:text="${err}"></div>
+			</dd>
+		</dl>
+		<dl>
+			<dt>제목</dt>
+			<dd>
+				<input type="text" name="subject" th:field="*{subject}">
+				<div class="errors" th:each="err:${#fields.errors('subject')}" th:text="${err}"></div>
+			</dd>
+		</dl>
+		<dl>
+			<dt>내용</dt>
+			<dd>
+				<textarea id="contents" name="contents" th:field="*{contents}"></textarea>
+				<div class="errors" th:each="err:${#fields.errors('poster')}" th:text="${err}"></div>
+			</dd>
+		</dl>
+	</th:block>
+</html>

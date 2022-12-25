@@ -26,4 +26,9 @@ public class BoardData {
 	@Lob // 롱 텍스트 형태
 	@Column(nullable=false)
 	private String contents;// 게시글 내용
+	
+	@Override
+	public String toString() {
+		return "BoardData [id=" + id + ", subject=" + subject + ", contents=" + contents + ", poster=" + poster + "]";
+	}
 }
