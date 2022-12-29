@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<body>
+		<th:block th:object="${boardData}">
+			<dl>
+				<dt>작성자</dt>
+				<dd>
+					<th:block th:text="*{poster}"></th:block>
+					<th:block th:if="*{member != null}" th:text="*{'(' + member.memId + ')'}"></th:block>
+				</dd>
+			</dl>
+			<dl>
+				<dt>작성일</dt>
+				<dd th:text="*{#temporals.format(regDt, 'yyyy.MM.dd HH:mm')}"></dd>
+			</dl>
+			<dl>
+				<dt>제목</dt>
+				<dd th:text="*{subject}"></dd>
+			</dl>
+			<dl>
+				<dt>내용</dt>
+				<dd th:utext="*{contents}"></dd>
+			</dl>
+		</th:block>
+		<a th:href="@{/board/update/{id}(id=*{id})}">수정</a>
+		<a th:href="@{/board/delete/{id}(id=*{id})}" th:onclick="confirm('정말 삭제하시겠습니까?');">삭제</a>
+		<a th:href="@{/board/list}">목록</a>
+	</body>
+</html>

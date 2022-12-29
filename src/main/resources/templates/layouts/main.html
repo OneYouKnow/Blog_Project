@@ -5,6 +5,8 @@
 		<title th:if="${siteTitle == null}">BLOG</title>
 		<title th:unless="${siteTitle == null}" th:text="${siteTitle + ' : BLOG'}">BLOG</title>
 		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/outline.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/chu.css}" />
 		<link rel="stylesheet" type="text/css" th:each="css : ${addCss}" th:href="@{/css/{css}.css(css=${css})}" />
 		<th:block layout:fragment="addCss"></th:block>
 		<script th:src="@{/js/scripts.js}"></script>

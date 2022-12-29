@@ -1,0 +1,55 @@
+<DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>회원가입</title>
+	</head>
+	<body>
+		<h1>회원가입</h1>
+		<form method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinRequest}">
+			<div class="errors" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></div>
+			<dl>
+				<dt>아이디</dt>
+				<dd>
+					<input type="text" name="memId" th:field="*{memId}">
+					<div class="errors" th:each="err : ${#fields.errors('memId')}" th:text="${err}"></div>
+				</dd>
+			</dl>
+			<dl>
+				<dt>비밀번호</dt>
+				<dd>
+					<input type="password" name="memPw" th:field="*{memPw}">
+					<div class="errors" th:each="err : ${#fields.errors('memPw')}" th:text="${err}"></div>
+				</dd>
+			</dl>
+			<dl>
+				<dt>비밀번호 확인</dt>
+				<dd>
+					<input type="password" name="memPwRe" th:field="*{memPwRe}">
+					<div class="errors" th:each="err : ${#fields.errors('memPwRe')}" th:text="${err}"></div>
+				</dd>
+			</dl>
+			<dl>
+				<dt>회원명</dt>
+				<dd>
+					<input type="text" name="memNm" th:field="*{memNm}">
+					<div class="errors" th:each="err : ${#fields.errors('memNm')}" th:text="${err}"></div>
+				</dd>
+			</dl>
+			<dl>
+				<dt>이메일</dt>
+				<dd>
+					<input type="text" name="email" th:field="*{email}">
+					<div class="errors" th:each="err : ${#fields.errors('email')}" th:text="${err}"></div>
+				</dd>
+			</dl>
+			<dl>
+				<dt>휴대전화번호</dt>
+				<dd>
+					<input type="text" name="mobile" th:field="*{mobile}">
+					<div class="errors" th:each="err : ${#fields.errors('mobile')}" th:text="${err}"></div>
+				</dd>
+			</dl>
+			<button type="submit">회원가입!</button>
+		</form>
+	</body>
+</html>

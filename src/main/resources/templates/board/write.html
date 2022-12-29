@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<th:block th:replace="board/_form::scripts"></th:block>
+	</head>
+	<body>
+		<h1>글쓰기</h1>
+		<form method="post" th:action="@{/board/write}" th:object="${boardRequest}" autocomplete="off">
+			<th:block th:replace="board/_form::form"></th:block>
+			<div>
+				<button type="reset">다시쓰기</button>
+				<button type="submit">작성하기</button>
+			</div>
+		</form>
+	</body>
+</html>
