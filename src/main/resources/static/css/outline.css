@@ -1,0 +1,16 @@
+header							{width: 100%; border-bottom: 1px solid #ddd;}
+header .header					{margin: 0 auto; max-width: 1300px; display: flex; justify-content: space-between; height: 80px; align-items: center;}
+header .header h1 a				{display: block; color: #454545; font: 600 26px/80px "Poppins", "Noto Sans KR", sans-serif; letter-spacing: 2px;}
+header .header h1 a .l			{color: #4d6bb7;}
+header .header h1 a .og			{color: #6d92d4;}
+header .header .right a			{displayL: block; color: #999; font: 400 16px/80px "Poppins", "Noto Sans KR", sans-serif; margin-left: 18px; transition: all .2s;}
+header .header .right a:hover	{color: #5f7892;}
+
+header .header .cate				{display: flex;}
+header .header .cate a				{display: block;color: #222; font: 500 19px/80px "Poppins", "Noto Sans KR", sans-serif; transition: all 0.2s; padding: 0 20px; margin: 0 5px; position: relative; text-align: center;}
+header .header .cate a:hover 		{color: #4d6bb7;}
+header .header .cate a::after		{content:''; display:inline-block; width:0%; height: 3px; position:absolute; background:#4d6bb7; left:50%; bottom: -1px; transition:all 0.2s; transform:translateX(-50%);}
+header .header .cate a:hover::after	{width:60px;}
+
+footer		{width: 100%;}
+footer p	{margin: 20px auto; text-align: center; font: 400 17px/20px "Poppins", "Noto Sans KR", sans-serif; color: #ccc;}
