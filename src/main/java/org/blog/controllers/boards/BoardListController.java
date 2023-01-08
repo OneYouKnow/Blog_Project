@@ -14,7 +14,7 @@ public class BoardListController {
 	@Autowired
 	private BoardDataListService service;
 	
-	@GetMapping("board/list")
+	@GetMapping("/board/list")
 	public String list(ListRequest listRequest, Model model) {
 		
 		Map<String, Object> result = service.get(listRequest);
